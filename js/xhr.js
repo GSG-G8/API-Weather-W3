@@ -2,8 +2,8 @@ const UrlWeather="";
 const UrlUnsplash="";
 
 const apiFunc = (url,callback) => {
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = () => {
         if (xhr.readyState == 4 && xhr.status == 200) {
            callback(JSON.parse(xhr.responseText))
         }
