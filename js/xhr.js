@@ -8,11 +8,6 @@ const apiFunc = (url,callback) => {
            callback(JSON.parse(xhr.responseText))
         }
     };
-    
     xhr.open("GET", url, true);
     xhr.send();
 }
-apiFunc(urlUser,(responseText)=>{
-
-    //// put your Dom here with responseText like a.textcontent=responseText.objectkey
-});
