@@ -1,10 +1,10 @@
 const timeClock = document.querySelector('.time-clock');
 const greetingMessg = document.querySelector('.greeting');
 
-let date = new Date();
+const date = new Date();
 
-var minutes = date.getMinutes();
-var hours = date.getHours();
+const minutes = date.getMinutes();
+const hours = date.getHours();
 
 timeClock.textContent = `${hours} : ${minutes}`;
 
