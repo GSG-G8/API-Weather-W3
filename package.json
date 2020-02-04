@@ -8,5 +8,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G8/API-Weather-W3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GSG-G8/API-Weather-W3/issues"
+  },
+  "homepage": "https://github.com/GSG-G8/API-Weather-W3#readme",
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
 }
