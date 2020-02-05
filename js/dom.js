@@ -2,14 +2,11 @@ const wrapper = document.querySelector('.wrapper');
 const time = document.querySelector('.wrapper__clock__time');
 const date = document.querySelector('.wrapper__clock__date');
 const greetingTxt = document.querySelector('.wrapper__clock__greeting');
-
 const searchInput = document.querySelector('#searchInput');
 const searchBtn = document.querySelector('#searchButton');
 
 const weatherFunc = search => {
-  apiFunc(weatherURL(search), responseText => {
-    console.log(responseText['data']);
-  });
+  apiFunc(weatherURL(search), responseText => {});
 };
 
 const unsplashFunc = search => {
@@ -22,9 +19,18 @@ const unsplashFunc = search => {
         responseText.results[i].urls.regular
       ];
     }
-    //  console.log(BgArr);
-    wrapper.style.backgroundImage = `url('${backgroundArray[1]}')`;
+    wrapper.style.backgroundImage = `url('${backgroundArray[i]}')`;
+    change(backgroundArray);
   });
+};
+
+const change = arr => {
+  let i = 0;
+  const img = setInterval(() => {
+    i >= arr.length - 1
+      ? clearInterval(img)
+      : (wrapper.style.backgroundImage = `url('${arr[i++]}')`);
+  }, 5000);
 };
 
 searchBtn.addEventListener('click', () => {
