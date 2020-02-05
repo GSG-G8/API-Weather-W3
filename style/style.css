@@ -11,10 +11,10 @@
 
 .searchdiv {
   height: 100px;
-  cursor: pointer;
 }
 
 .searchBtn__label {
+  cursor: pointer;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   font-size: 1.8rem;
