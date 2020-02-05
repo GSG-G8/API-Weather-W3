@@ -1,5 +1,5 @@
 const weatherURL = input => {
-  return `https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=${watherbitAPIKey}&hours=48`;
+  return `https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=${weatherbitAPIKey}&hours=48`;
 };
 
 const unsplashURL = input => {
