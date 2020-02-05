@@ -32,6 +32,6 @@ setInterval(() => {
   if (hour === '00') hour = '24';
   let greetingText = greeting(hour);
   greetingTxt.textContent = greetingText;
-  time.innerHTML = hour + ':' + minutes + ':' + seconds;
-  date.innerHTML = year + '/' + month + '/' + day;
+  time.textContent = hour + ':' + minutes + ':' + seconds;
+  date.textContent = year + '/' + month + '/' + day;
 }, 1000);
