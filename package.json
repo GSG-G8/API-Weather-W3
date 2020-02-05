@@ -18,7 +18,8 @@
     "url": "https://github.com/GSG-G8/API-Weather-W3/issues"
   },
   "homepage": "https://github.com/GSG-G8/API-Weather-W3#readme",
-  "dependencies": {
+  "devdependencies": {
+    "@types/jest": "^25.1.1",
     "jest": "^25.1.0"
   }
 }
