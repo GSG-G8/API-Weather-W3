@@ -31,3 +31,10 @@
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+.wrapper__clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}

@@ -1,15 +1,10 @@
 const timeClock = document.querySelector('.time-clock');
 const greetingMessg = document.querySelector('.greeting');
 
-const date = new Date();
+const greeting = x => {
+  return x > 12 ? 'GOOD EVENING' : 'GOOD MORNING';
+};
 
-const minutes = date.getMinutes();
-const hours = date.getHours();
-
-timeClock.textContent = `${hours} : ${minutes}`;
-
-if (hours < 12) {
-  greetingMessg.textContent = 'Good Morning';
-} else {
-  greetingMessg.textContent = 'Good afternoon';
+if (typeof module !== 'undefined') {
+  module.exports = greeting;
 }
