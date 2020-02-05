@@ -35,8 +35,18 @@ const unsplashFunc = search => {
         responseText.results[i].urls.regular
       ];
     }
-    wrapper.style.backgroundImage = `url('${backgroundArray[1]}')`;
+    wrapper.style.backgroundImage = `url('${backgroundArray[i]}')`;
+    change(backgroundArray);
   });
+};
+
+const change = arr => {
+  let i = 0;
+  const img = setInterval(() => {
+    i >= arr.length - 1
+      ? clearInterval(img)
+      : (wrapper.style.backgroundImage = `url('${arr[i++]}')`);
+  }, 5000);
 };
 
 searchBtn.addEventListener('click', () => {
