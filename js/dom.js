@@ -52,6 +52,7 @@ const change = arr => {
 searchBtn.addEventListener('click', () => {
   weatherFunc(searchInput.value);
   unsplashFunc(searchInput.value);
+  searchInput.value = '';
 });
 
 setInterval(() => {
