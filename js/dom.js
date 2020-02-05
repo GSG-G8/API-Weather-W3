@@ -23,15 +23,19 @@ searchBtn.addEventListener('click', () => {
 
 setInterval(() => {
   let locoalDateAndTime = new Date();
-  let year = locoalDateAndTime.getFullYear();
-  let month = locoalDateAndTime.getMonth();
-  let day = locoalDateAndTime.getDate();
   let hour = locoalDateAndTime.getHours();
-  let minutes = locoalDateAndTime.getMinutes();
-  let seconds = locoalDateAndTime.getSeconds();
   if (hour === '00') hour = '24';
-  let greetingText = greeting(hour);
-  greetingTxt.textContent = greetingText;
-  time.textContent = hour + ':' + minutes + ':' + seconds;
-  date.textContent = year + '/' + month + '/' + day;
+  greetingTxt.textContent = greeting(hour);
+  time.textContent =
+    hour +
+    ':' +
+    locoalDateAndTime.getMinutes() +
+    ':' +
+    locoalDateAndTime.getSeconds();
+  date.textContent =
+    locoalDateAndTime.getFullYear() +
+    '/' +
+    locoalDateAndTime.getMonth() +
+    '/' +
+    locoalDateAndTime.getDate();
 }, 1000);
