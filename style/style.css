@@ -6,7 +6,7 @@
 .container {
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -14,9 +14,10 @@
   color: white;
   font-weight: bold;
 }
+
 .wrapper {
   height: 100vh;
-  background-size: cover;
+  background-size: 100vw 100%;
   overflow: hidden;
   background-image: url('https://source.unsplash.com/user/erondu');
 }
@@ -41,13 +42,15 @@
 }
 
 .search__input {
-  width: 50%;
+  width: 25%;
   background: transparent;
   color: rgba(255, 253, 253, 0.7);
   font-size: 1rem;
   font-weight: bold;
   border: none;
   outline: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .search__input:hover,
 .search__input:focus {
@@ -55,13 +58,16 @@
 }
 
 .search__button {
-  width: 4rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  width: 2rem;
   background-color: rgba(243, 235, 235, 0.5);
+  color: whitesmoke;
   border: transparent;
   border-radius: 24px;
   padding: 5px;
   outline: 0;
   cursor: pointer;
+  font-size: 0.7rem;
 }
 .search__button:hover {
   background-color: rgb(238, 227, 227);
@@ -75,7 +81,12 @@
   font-weight: 700;
   margin-bottom: 1rem;
 }
-
+.weather__containerDiv {
+  font-weight: bold;
+  text-shadow: 5px 1px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  display: flex;
+}
 @media screen and (min-width: 600px) {
   * {
     font-size: 28px;
