@@ -12,8 +12,16 @@ const changebackground = search => {
   });
 };
 
+const timeClock = document.querySelector('.time-clock');
+const changeLocalTime = search => {
+  apiFunc(UrlWeather + ApiLocalTimeKey + '&query=' + search, responseText => {
+    timeClock.textContent = responseText.current.observation_time;
+  });
+};
+
 const searchBtn = document.querySelector('#searchButton');
 searchBtn.addEventListener('click', () => {
   const searchInput = document.querySelector('#searchInput');
   changebackground(searchInput.value);
+  changeLocalTime(searchInput.value);
 });
