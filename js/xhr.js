@@ -8,10 +8,16 @@ const unsplashURL = input => {
 const apiFunc = (url, callback) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
-    if (xhr.readyState == 4 && xhr.status == 200) {
+    if (xhr.readyState === 4 && xhr.status === 200) {
       callback(JSON.parse(xhr.responseText));
+    } else if (xhr.status >= 300) {
+      handleError('ERROR');
     }
   };
   xhr.open('GET', url, true);
   xhr.send();
+};
+
+const handleError = error => {
+  alert('There is problem with conection');
 };
