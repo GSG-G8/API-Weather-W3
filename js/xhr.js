@@ -1,10 +1,9 @@
-const weatherURL = input => {
-  return `https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=${weatherbitAPIKey}&hours=48`;
-};
+const weatherURL = input =>
+  `https://api.weatherbit.io/v2.0/forecast/hourly?city=${input}&key=${weatherbitAPIKey}&hours=48`;
 
-const unsplashURL = input => {
-  return `https://api.unsplash.com/search/photos?client_id=${unsplashAPIKey}&query=${input}`;
-};
+const unsplashURL = input =>
+  `https://api.unsplash.com/search/photos?client_id=${unsplashAPIKey}&query=${input}`;
+
 const apiFunc = (url, callback) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
@@ -14,7 +13,7 @@ const apiFunc = (url, callback) => {
       handleError('ERROR');
     }
   };
-  xhr.open('GET', url, true);
+  xhr.open('GET', url);
   xhr.send();
 };
 

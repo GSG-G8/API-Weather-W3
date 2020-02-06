@@ -6,10 +6,9 @@ const searchInput = document.querySelector('#searchInput');
 const searchBtn = document.querySelector('#searchButton');
 const mainWeather = document.querySelector('.weather__span');
 const otherWeather = document.querySelector('.weather__containerDiv');
-let img;
-const weatherFunc = search => {
-  apiFunc(weatherURL(search), responseText => {
-    mainWeather.textContent = `The weather currently in ${search} is: ${responseText['data'][0]['temp']}°`;
+const weatherFunc = () => {
+  apiFunc(weatherURL(searchInput.value), responseText => {
+    mainWeather.textContent = `The weather currently in ${searchInput.value} is: ${responseText['data'][0]['temp']}°`;
     otherWeather.textContent = ' ';
     for (let i = 0; i < 17; i = i + 4) {
       const otherWeatherChild = document.createElement('div');
@@ -26,8 +25,8 @@ const weatherFunc = search => {
   });
 };
 
-const unsplashFunc = search => {
-  apiFunc(unsplashURL(search), responseText => {
+const unsplashFunc = () => {
+  apiFunc(unsplashURL(searchInput.value), responseText => {
     let backgroundArray = [];
     for (i in responseText.results) {
       backgroundArray = [
@@ -50,10 +49,8 @@ const change = arr => {
 };
 
 searchBtn.addEventListener('click', () => {
-  clearInterval(img);
-  weatherFunc(searchInput.value);
-  unsplashFunc(searchInput.value);
-  searchInput.value = '';
+  weatherFunc();
+  unsplashFunc();
 });
 
 setInterval(() => {
