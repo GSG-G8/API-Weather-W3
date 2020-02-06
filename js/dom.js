@@ -7,9 +7,9 @@ const searchBtn = document.querySelector('#searchButton');
 const mainWeather = document.querySelector('.weather__span');
 const otherWeather = document.querySelector('.weather__containerDiv');
 
-const weatherFunc = search => {
-  apiFunc(weatherURL(search), responseText => {
-    mainWeather.textContent = `The weather currently in ${search} is: ${responseText['data'][0]['temp']}°`;
+const weatherFunc = () => {
+  apiFunc(weatherURL(searchInput.value), responseText => {
+    mainWeather.textContent = `The weather currently in ${searchInput.value} is: ${responseText['data'][0]['temp']}°`;
     otherWeather.textContent = ' ';
     for (let i = 0; i < 17; i = i + 4) {
       const otherWeatherChild = document.createElement('div');
@@ -26,8 +26,8 @@ const weatherFunc = search => {
   });
 };
 
-const unsplashFunc = search => {
-  apiFunc(unsplashURL(search), responseText => {
+const unsplashFunc = () => {
+  apiFunc(unsplashURL(searchInput.value), responseText => {
     let backgroundArray = [];
     for (i in responseText.results) {
       backgroundArray = [
@@ -50,14 +50,13 @@ const change = arr => {
 };
 
 searchBtn.addEventListener('click', () => {
-  weatherFunc(searchInput.value);
-  unsplashFunc(searchInput.value);
-  searchInput.value = '';
+  weatherFunc();
+  unsplashFunc();
 });
 
 setInterval(() => {
-  let locoalDateAndTime = new Date();
-  let hour = locoalDateAndTime.getHours();
+  const locoalDateAndTime = new Date();
+  const hour = locoalDateAndTime.getHours();
   if (hour === '00') hour = '24';
   greetingTxt.textContent = greeting(hour);
   time.textContent =
