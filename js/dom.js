@@ -9,15 +9,15 @@ const otherWeather = document.querySelector('.weather__containerDiv');
 
 const weatherFunc = () => {
   apiFunc(weatherURL(searchInput.value), responseText => {
-    mainWeather.textContent = `The weather currently in ${searchInput.value} is: ${responseText['data'][0]['temp']}°`;
+    mainWeather.textContent = `The weather currently in ${searchInput.value} is: ${responseText.data[0].temp}°`;
     otherWeather.textContent = ' ';
     for (let i = 0; i < 17; i = i + 4) {
       const otherWeatherChild = document.createElement('div');
       const weatherSpan = document.createElement('span');
       const timeSpan = document.createElement('span');
-      weatherSpan.textContent = `${responseText['data'][i]['temp']}° `;
+      weatherSpan.textContent = `${responseText.data[i].temp}° `;
       timeSpan.textContent = `at ${
-        responseText['data'][i]['timestamp_local'].split('T')[1]
+        responseText.data[i]['timestamp_local'].split('T')[1]
       }`;
       otherWeatherChild.appendChild(weatherSpan);
       otherWeatherChild.appendChild(timeSpan);
@@ -55,13 +55,8 @@ searchBtn.addEventListener('click', () => {
 });
 
 setInterval(() => {
-<<<<<<< HEAD
-  const locoalDateAndTime = new Date();
-  const hour = locoalDateAndTime.getHours();
-=======
   const locoalTimeZone = new Date();
   const hour = locoalTimeZone.getHours();
->>>>>>> 51b8d7ef922293c9dfb38779f5079569ae7cf68a
   if (hour === '00') hour = '24';
   greetingTxt.textContent = greeting(hour);
   time.textContent = locoalTimeZone.toLocaleTimeString();
