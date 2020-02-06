@@ -1,6 +1,3 @@
-const timeClock = document.querySelector('.time-clock');
-const greetingMessg = document.querySelector('.greeting');
-
 const greeting = x => {
   return x > 12 ? 'GOOD EVENING' : 'GOOD MORNING';
 };
