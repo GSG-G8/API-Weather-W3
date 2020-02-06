@@ -9,8 +9,14 @@ const apiFunc = (url, callback) => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       callback(JSON.parse(xhr.responseText));
+    } else if (xhr.status >= 300) {
+      handleError('ERROR');
     }
   };
   xhr.open('GET', url);
   xhr.send();
+};
+
+const handleError = error => {
+  alert('There is problem with conection');
 };

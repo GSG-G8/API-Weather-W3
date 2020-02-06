@@ -6,7 +6,6 @@ const searchInput = document.querySelector('#searchInput');
 const searchBtn = document.querySelector('#searchButton');
 const mainWeather = document.querySelector('.weather__span');
 const otherWeather = document.querySelector('.weather__containerDiv');
-
 const weatherFunc = () => {
   apiFunc(weatherURL(searchInput.value), responseText => {
     mainWeather.textContent = `The weather currently in ${searchInput.value} is: ${responseText.data[0].temp}°`;
@@ -42,11 +41,11 @@ const unsplashFunc = () => {
 
 const change = arr => {
   let i = 0;
-  const img = setInterval(() => {
+  img = setInterval(() => {
     i >= arr.length - 1
       ? clearInterval(img)
       : (wrapper.style.backgroundImage = `url('${arr[i++]}')`);
-  }, 5000);
+  }, 7000);
 };
 
 searchBtn.addEventListener('click', () => {
