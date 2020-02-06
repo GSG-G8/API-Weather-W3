@@ -55,20 +55,15 @@ searchBtn.addEventListener('click', () => {
 });
 
 setInterval(() => {
+<<<<<<< HEAD
   const locoalDateAndTime = new Date();
   const hour = locoalDateAndTime.getHours();
+=======
+  const locoalTimeZone = new Date();
+  const hour = locoalTimeZone.getHours();
+>>>>>>> 51b8d7ef922293c9dfb38779f5079569ae7cf68a
   if (hour === '00') hour = '24';
   greetingTxt.textContent = greeting(hour);
-  time.textContent =
-    hour +
-    ':' +
-    locoalDateAndTime.getMinutes() +
-    ':' +
-    locoalDateAndTime.getSeconds();
-  date.textContent =
-    locoalDateAndTime.getFullYear() +
-    '/' +
-    locoalDateAndTime.getMonth() +
-    '/' +
-    locoalDateAndTime.getDate();
+  time.textContent = locoalTimeZone.toLocaleTimeString();
+  date.textContent = locoalTimeZone.toLocaleDateString();
 }, 1000);
