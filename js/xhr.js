@@ -9,7 +9,7 @@ const apiFunc = (url, callback) => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
       callback(JSON.parse(xhr.responseText));
-    } else if (xhr.status >= 300) {
+    } else if (xhr.status === 404) {
       handleError('ERROR');
     }
   };
@@ -18,5 +18,5 @@ const apiFunc = (url, callback) => {
 };
 
 const handleError = error => {
-  alert('There is problem with conection');
+  alert('404 Not found');
 };
